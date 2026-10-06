@@ -106,7 +106,7 @@ public class PropertyServiceImpl implements PropertyService {
         property.setOwner(owner);
         property.setOwnerEmail(owner.getEmail());
 
-        // Do NOT change status during normal property update
+
 
         Property updatedProperty =
                 propertyRepository.save(property);

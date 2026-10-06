@@ -29,7 +29,7 @@ public class PropertyMapper {
                 .country(request.getCountry())
                 .latitude(request.getLatitude())
                 .longitude(request.getLongitude())
-                .status(PropertyStatus.DRAFT)
+                .status(PropertyStatus.PENDING_APPROVAL)
                 .build();
     }
 

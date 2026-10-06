@@ -36,7 +36,7 @@ public class Property {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private PropertyStatus status = PropertyStatus.DRAFT;
+    private PropertyStatus status = PropertyStatus.PENDING_APPROVAL;
 
     private Integer bedrooms;
     private Integer bathrooms;
