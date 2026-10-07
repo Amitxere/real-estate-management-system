@@ -82,7 +82,8 @@ public class AuthService {
                 .accessToken(token)
                 .tokenType("Bearer")
                 .userId(user.getId())
-                .username(user.getUsername())
+//                .username(user.getUsername())
+                .username(user.getDisplayUsername())
                 .email(user.getEmail())
                 .role(user.getRole())
                 .build();

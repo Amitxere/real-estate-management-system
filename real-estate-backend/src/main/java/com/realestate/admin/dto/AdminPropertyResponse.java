@@ -35,6 +35,7 @@ public class AdminPropertyResponse {
     private String country;
 
     private Long ownerId;
+    private String ownerUsername;
     private String ownerEmail;
 
     public static AdminPropertyResponse fromEntity(Property property) {
@@ -59,6 +60,7 @@ public class AdminPropertyResponse {
                                 ? property.getOwner().getId()
                                 : null
                 )
+                .ownerUsername(property.getOwner().getDisplayUsername())
                 .ownerEmail(property.getOwnerEmail())
                 .build();
     }

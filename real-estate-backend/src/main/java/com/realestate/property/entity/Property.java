@@ -60,4 +60,7 @@ public class Property {
 
     @Column(nullable = false, length = 100)
     private String ownerEmail;
+
+//    @Column(nullable = false, length = 100)
+//    private String ownerName;
 }

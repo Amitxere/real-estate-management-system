@@ -25,7 +25,8 @@ public class AdminUserResponse {
     public static AdminUserResponse fromEntity(User user) {
         return AdminUserResponse.builder()
                 .id(user.getId())
-                .username(user.getUsername())
+//                .username(user.getUsername())
+                .username(user.getDisplayUsername())
                 .email(user.getEmail())
                 .mobileNumber(user.getMobileNumber())
                 .role(user.getRole())
