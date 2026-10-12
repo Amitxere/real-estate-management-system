@@ -1,0 +1,164 @@
+.admin-navbar {
+    height: 76px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 68px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e8ebef;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BRAND
+========================= */
+
+.admin-brand {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    color: #071b38;
+
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.admin-brand-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #2563eb;
+    color: #ffffff;
+
+    border-radius: 12px;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.admin-nav {
+    display: flex;
+    align-items: center;
+
+    gap: 38px;
+}
+
+.admin-nav-link {
+    border: none;
+    background: transparent;
+
+    color: #334155;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    padding: 8px 0;
+}
+
+.admin-nav-link:hover {
+    color: #2563eb;
+}
+
+
+/* =========================
+   ADMIN USER
+========================= */
+
+.admin-user {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    color: #475569;
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   SIGN OUT
+========================= */
+
+.admin-logout {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    border: none;
+    background: transparent;
+
+    color: #dc2626;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    padding: 8px 0;
+}
+
+.admin-logout:hover {
+    color: #b91c1c;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .admin-navbar {
+        padding: 0 30px;
+    }
+
+    .admin-nav {
+        gap: 20px;
+    }
+
+    .admin-user span {
+        display: none;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .admin-navbar {
+        padding: 0 20px;
+    }
+
+    .admin-brand span {
+        display: none;
+    }
+
+    .admin-nav {
+        gap: 15px;
+    }
+
+    .admin-nav-link {
+        font-size: 14px;
+    }
+
+    .admin-logout span {
+        display: none;
+    }
+}
