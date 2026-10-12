@@ -19,7 +19,6 @@ public class AdminServiceImpl
     private final UserRepository userRepository;
     private final PropertyRepository propertyRepository;
 
-
     @Override
     public AdminResponse getDashboardStats() {
 

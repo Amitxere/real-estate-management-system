@@ -16,6 +16,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 import java.util.List;
 
@@ -24,6 +25,8 @@ import java.util.List;
 public class SecurityConfig {
 
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
+    private final GoogleOAuth2SuccessHandler googleOAuth2SuccessHandler;
+
 
     @Bean
     public SecurityFilterChain securityFilterChain(
@@ -31,24 +34,27 @@ public class SecurityConfig {
 
         http
                 .csrf(csrf -> csrf.disable())
-
                 .cors(cors -> {})
-
                 .sessionManagement(session ->
                         session.sessionCreationPolicy(
-                                SessionCreationPolicy.STATELESS
+                                SessionCreationPolicy.IF_REQUIRED
                         )
                 )
-
                 .authorizeHttpRequests(auth -> auth
-
                         .requestMatchers(
-                                "/api/auth/**"
+                                "/api/auth/**",
+                                "/oauth2/**",
+                                "/login/**"
                         ).permitAll()
-                        .requestMatchers("/api/admin/**").hasRole("ADMIN")
+                        .requestMatchers("/api/admin/**")
+                        .hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )
-
+                .oauth2Login(oauth ->
+                        oauth.successHandler(
+                                googleOAuth2SuccessHandler
+                        )
+                )
                 .addFilterBefore(
                         jwtAuthenticationFilter,
                         UsernamePasswordAuthenticationFilter.class
@@ -56,8 +62,6 @@ public class SecurityConfig {
 
         return http.build();
     }
-
-
 
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {

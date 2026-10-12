@@ -80,9 +80,14 @@ public class JwtAuthenticationFilter
                             );
                 }
             }
-        } catch (Exception e) {
-        e.printStackTrace();
-    }
+        } catch (Exception ignored) {
+            SecurityContextHolder.clearContext();
+        }
+
+
+//        } catch (Exception e) {
+//        e.printStackTrace();
+//    }
 
 //        } catch (Exception ignored) {
 //            // Invalid token -> request continues
